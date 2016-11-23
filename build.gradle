@@ -1,0 +1,66 @@
+ext {
+  springConfigLocation = System.getProperty('spring.config.location', "defaults.yaml")
+//  springConfigLocation = System.properties
+}
+
+tasks.withType(org.springframework.boot.gradle.run.BootRunTask) {
+  systemProperty('spring.config.location', project.springConfigLocation)
+}
+
+buildscript {
+ repositories {
+    mavenCentral()
+ }
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+  }
+}
+
+apply plugin: 'java'
+apply plugin: 'groovy'
+
+sourceSets {
+  main {
+    resources {
+      srcDir 'src/main/resources'
+    }
+  }
+
+  jobs {
+    groovy {
+      srcDirs 'jobs'
+      compileClasspath += main.compileClasspath
+    }
+    compileClasspath += sourceSets.main.output
+    runtimeClasspath += sourceSets.main.output
+  }
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+    maven { url 'https://repo.gradle.org/gradle/libs-releases' }
+    maven { url 'http://spinnaker.bintray.com/gradle' }
+    maven { url 'http://repo.jenkins-ci.org/releases' }
+    maven { url 'http://repo.spring.io/libs-release' }
+}
+
+configurations {
+    testPlugins {}
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.7'
+    compile 'org.yaml:snakeyaml:1.17@jar'
+    compile "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+    compile("org.springframework.boot:spring-boot-starter:${springBootVersion}")
+    compile("javax.validation:com.springsource.javax.validation:1.0.0.GA")
+    compile("org.hibernate:com.springsource.org.hibernate.validator:4.2.0.Final")
+    testCompile("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+
+}
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.14'
+}
