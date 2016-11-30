@@ -21,7 +21,7 @@ spring:
     main:
         banner-mode: "off"
 
-github.enabled: true
 github:
-    baseUrl: 0
-    accessToken: accessMeow
+  enabled: true
+  baseUrl: 0
+  accessToken: accessMeow
