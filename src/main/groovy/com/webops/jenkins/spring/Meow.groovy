@@ -11,7 +11,6 @@ import org.springframework.context.ConfigurableApplicationContext
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.autoconfigure.web.*
 
-
 @Configuration
 @EnableAutoConfiguration(exclude = [ WebMvcAutoConfiguration.class, WebClientAutoConfiguration.class,
     HttpMessageConvertersAutoConfiguration.class, GroovyTemplateAutoConfiguration.class])
@@ -25,7 +24,7 @@ public class Meow {
   ]
 
   void main(String[] args) {
-    ConfigurableApplicationContext ctx = new SpringApplicationBuilder(Meow.class)
+     new SpringApplicationBuilder(Meow.class)
         .web(false)
         .properties(DEFAULT_PROPS)
         .run(args);
