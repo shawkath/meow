@@ -21,6 +21,8 @@ spring:
     main:
         banner-mode: "off"
 
+project:
+  name: bluenode
 github:
   enabled: true
   baseUrl: 0

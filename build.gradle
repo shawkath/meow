@@ -50,7 +50,8 @@ dependencies {
     compile 'org.codehaus.groovy:groovy-all:2.4.7'
     compile 'org.yaml:snakeyaml:1.17'
     compile 'org.springframework:spring-test'
-    compile('org.springframework.boot:spring-boot-starter')
+    compile 'org.springframework.boot:spring-boot-starter'
+    compile 'org.jenkins-ci.plugins:job-dsl-core:1.53'
 
     testCompile 'org.springframework.boot:spring-boot-starter'
 
