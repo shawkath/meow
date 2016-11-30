@@ -14,10 +14,6 @@ spring:
 server:
     port: 9001
 
-github:
-  enabled: true
-  baseUrl: http://github.com
-  accessToken: accessMeow
 ---
 
 spring:
@@ -25,8 +21,6 @@ spring:
     main:
         banner-mode: "off"
 
-project:
-  name: bluenode
 github:
   enabled: true
   baseUrl: 0
