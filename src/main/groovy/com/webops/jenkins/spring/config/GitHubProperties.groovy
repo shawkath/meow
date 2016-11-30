@@ -1,7 +1,7 @@
 package com.webops.jenkins.spring.config
 
 import groovy.transform.Canonical
-import groovy.transform.CompileStatic
+//import groovy.transform.CompileStatic
 //import org.hibernate.validator.constraints.NotEmpty
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
 import org.springframework.boot.context.properties.ConfigurationProperties
@@ -15,7 +15,6 @@ import org.springframework.stereotype.Component
 /**
  * Helper class to map masters in properties file into a validated property map
  */
-//@ConditionalOnProperty('github.baseUrl')
 @Component
 @ConfigurationProperties(prefix = 'github')
 class GitHubProperties {
