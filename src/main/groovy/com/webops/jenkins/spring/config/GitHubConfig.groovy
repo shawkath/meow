@@ -12,12 +12,9 @@ import org.springframework.context.annotation.Configuration
 @EnableConfigurationProperties(GitHubProperties)
 class GitHubConfig {
 
-  @Autowired
-  GitHubProperties gitHubProperties
-
   @Bean
-  static main() {
-    println "{gitHubProperties.baseUrl}"
-    println "{gitHubProperties.accessToken}"
+  static main(GitHubProperties gitHubProperties) {
+    println "${gitHubProperties.baseUrl}"
+    println "${gitHubProperties.accessToken}"
   }
 }
