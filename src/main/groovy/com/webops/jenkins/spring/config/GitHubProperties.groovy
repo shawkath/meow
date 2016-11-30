@@ -9,7 +9,7 @@ import org.springframework.boot.context.properties.NestedConfigurationProperty
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Component
 
-import javax.validation.constraints.NotNull
+//import javax.validation.constraints.NotNull
 
 
 /**
