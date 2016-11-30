@@ -1,7 +1,6 @@
-tasks.withType(org.springframework.boot.gradle.run.BootRunTask) {
+//tasks.withType(org.springframework.boot.gradle.run.BootRunTask) {
 //  systemProperty('spring.config.location', project.springConfigLocation)
-  systemProperty('spring.profiles.active', "meow")
-}
+//}
 
 buildscript {
  repositories {
