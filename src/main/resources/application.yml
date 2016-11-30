@@ -1,5 +1,10 @@
-spring.application.name=cruncher
-spring.profiles.active=production
+---
+
+spring:
+  profiles:
+    active: production
+  application:
+    name: cruncher
 
 ---
 
@@ -13,6 +18,8 @@ server:
 
 spring:
     profiles: production
+    main:
+        banner-mode: "off"
 
 github.enabled: true
 github:
